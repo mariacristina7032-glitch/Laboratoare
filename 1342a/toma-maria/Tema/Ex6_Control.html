@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bec cu contor</title>
+
+    <script>
+        var becAprins = false;
+        var contor = 0;
+
+        function toggleBec() {
+            var bec = document.getElementById("bec");
+            
+            if (becAprins == false) {
+                bec.src = 'Bec aprins.gif';
+                becAprins = true;
+                contor++;
+            } else {
+                bec.src = 'Bec stins.gif';
+                becAprins = false;
+            }
+
+            document.getElementById("mesaj").innerHTML =
+                "Becul a fost aprins de " + contor +
+                (contor == 1 ? " ori." : " ori.");
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Bec cu contor</h2>
+
+    <p>Apasă pe bec pentru a-l aprinde sau stinge.</p>
+
+    <img id="bec"
+         onclick="toggleBec()"
+         src="Bec stins.gif"
+         width="100"
+         height="180"
+         alt="Bec">
+
+    <p id="mesaj">Becul a fost aprins de 0 ori.</p>
+</body>
+</html>
